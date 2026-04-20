@@ -1,20 +1,22 @@
 {
-  "name": "ui-react-component-base",
+  "name": "@rickyarians/ui-react-component-base",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup index.ts --format esm,cjs --dts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "react": "^19.2.5",
-    "react-native": "^0.84.1"
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=0.70"
   },
   "devDependencies": {
     "@types/react": "^19.2.14",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "tsup": "^8.5.1",
+    "react": "^19.2.5",
+    "react-native": "^0.84.1"
   }
 }

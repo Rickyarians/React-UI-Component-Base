@@ -7,8 +7,7 @@ export const Button = ({title}:any) => {
   return (
     <TouchableOpacity
       style={{
-        backgroundColor: theme.colors.primary,
-        padding: theme.spacing.md,
+        backgroundColor: theme.colors.abubutek,
         borderRadius: 8
       }}>
       <Text style={{color: '#fff'}}>{title}</Text>
