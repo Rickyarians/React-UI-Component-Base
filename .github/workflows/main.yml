@@ -33,33 +33,9 @@ jobs:
 
       - name: Build
         run: npm run build
+        
 
-      - name: Debug token
-        run: |
-          echo "registry=https://registry.npmjs.org/"
-          npm config list
-          npm whoami
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      # - name: Version bump
-      #   run: npm version patch -m "release: %s"
-
-      - name: Push commit & tags
-        run: git push origin main --follow-tags
-
-      - name: Setup npm auth
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Debug npm whoami
-        run: npm whoami
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish
-        run: npm publish --access public
+     - run: npm ci
+      - run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
