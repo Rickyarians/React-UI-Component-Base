@@ -31,17 +31,26 @@ jobs:
       - name: Build
         run: npm run build
 
-      # 🔥 FIX PENTING: git identity HARUS sebelum npm version
       - name: Configure Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      # 🔥 FIX VERSIONING LEBIH AMAN
       - name: Bump version
-        run: npm version patch -m "release: %s"
+        run: |
+          npm version patch --no-git-tag-version
+          git add package.json package-lock.json
+          git commit -m "release: bump version"
 
-      - name: Push changes + tags
-        run: git push origin main --follow-tags
+      - name: Push changes
+        run: |
+          git push origin main
+
+      - name: Create tag
+        run: |
+          git tag v$(node -p "require('./package.json').version")
+          git push origin --tags
 
       - name: Publish package
         run: npm publish --provenance --access public
