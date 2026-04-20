@@ -31,14 +31,17 @@ jobs:
       - name: Build
         run: npm run build
 
-      # 🔥 VERSIONING STEP
-      - name: Bump version
+      # 🔥 FIX PENTING: git identity HARUS sebelum npm version
+      - name: Configure Git
         run: |
-          npm version patch -m "release: %s"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Push version + tags
-        run: |
-          git push origin main --follow-tags
+      - name: Bump version
+        run: npm version patch -m "release: %s"
+
+      - name: Push changes + tags
+        run: git push origin main --follow-tags
 
       - name: Publish package
         run: npm publish --provenance --access public
