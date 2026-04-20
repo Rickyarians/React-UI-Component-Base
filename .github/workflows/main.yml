@@ -40,6 +40,12 @@ jobs:
       - name: Push commit & tags
         run: git push origin main --follow-tags
 
+      - name: Setup npm auth
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Publish
         run: npm publish --access public
         env:
