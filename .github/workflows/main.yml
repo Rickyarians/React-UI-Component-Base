@@ -1,5 +1,3 @@
-permissions:
-  contents: write
 name: Publish to npm
 
 on:
@@ -39,8 +37,8 @@ jobs:
       - name: Version bump
         run: npm version patch -m "release: %s"
 
-      - name: Push tags
-        run: git push --follow-tags
+      - name: Push commit & tags
+        run: git push origin main --follow-tags
 
       - name: Publish
         run: npm publish --access public
