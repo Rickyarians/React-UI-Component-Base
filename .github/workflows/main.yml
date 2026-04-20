@@ -28,14 +28,11 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Install
-        run: npm ci
-
       - name: Build
         run: npm run build
         
 
-     - run: npm ci
+      - run: npm ci
       - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
