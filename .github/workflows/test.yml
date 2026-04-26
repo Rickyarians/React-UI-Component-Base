@@ -21,6 +21,9 @@ jobs:
       - name: Enable corepack (wajib)
         run: corepack enable
 
+      - name: Install pnpm
+        run: corepack install-self pnpm
+
       - name: Install dependencies
         run: pnpm install
 
