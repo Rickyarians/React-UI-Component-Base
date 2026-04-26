@@ -15,10 +15,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
+          cache: 'pnpm'
 
-      - name: Install deps
+      - name: Enable corepack (wajib)
+        run: corepack enable
+
+      - name: Install dependencies
         run: pnpm install
 
       - name: Run test
-        run: pnpm vitest run --coverage
+        run: pnpm test
