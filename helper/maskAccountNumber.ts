@@ -1,5 +1,6 @@
 
 export const maskAccountNumber = (num: any) => {
+    if (!num) return ''
     
     const digits = num.replace(/\D/g, '');
   
