@@ -12,7 +12,7 @@ describe('maskNumber', () => {
 
 
   describe('negatif case', () => {
-    it.fails('tidak masukkan value, harusnya tidak usah di proses atau return string kosong', () => {
+    it('tidak masukkan value, harusnya tidak usah di proses atau return string kosong', () => {
      expect(maskAccountNumber('')).toBe('')
     })
  })
