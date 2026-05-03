@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.10] - 2026-05-04
+
+### Changed
+
+- Published the professional README update with the npm package metadata.
+
 ## [1.0.9] - 2026-05-04
 
 ### Fixed
