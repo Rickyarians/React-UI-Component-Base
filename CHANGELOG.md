@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.7] - 2026-05-04
+
+### Fixed
+
+- Fixed npm publish automation so existing tags no longer silently skip unpublished package versions.
+- Bumped the release version after `v1.0.6` was tagged locally/remotely but not published to npm.
+
 ## [1.0.6] - 2026-05-04
 
 ### Changed

@@ -16,10 +16,12 @@ declare const useTheme: () => {
         eletricrose: string;
         grey: string;
         greynew: string;
+        pineteal: string;
         purple: string;
         skyaqua: string;
         springgreen: string;
         tropicalTeal: string;
+        twilightindigo: string;
         white: string;
         yellow: string;
     };

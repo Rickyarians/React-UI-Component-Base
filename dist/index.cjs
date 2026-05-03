@@ -46,10 +46,12 @@ var theme = {
     "eletricrose": "#de369d",
     "grey": "#bdbdbd",
     "greynew": "#bdbdbd",
+    "pineteal": "#29524a",
     "purple": "#b79ced",
     "skyaqua": "#3c887e",
     "springgreen": "#0fff95",
     "tropicalTeal": "#73bfb8",
+    "twilightindigo": "#414361",
     "white": "#ffffff",
     "yellow": "#fec601"
   },
