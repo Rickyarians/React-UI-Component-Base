@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.9] - 2026-05-04
+
+### Fixed
+
+- Added npm registry verification after publish so the workflow fails if the package is not publicly visible.
+
 ## [1.0.8] - 2026-05-04
 
 ### Changed

@@ -94,3 +94,15 @@ jobs:
         run: npm publish --provenance --access public --registry=https://registry.npmjs.org/
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Verify published package
+        if: steps.release.outputs.should_publish == 'true'
+        env:
+          PACKAGE_NAME: ${{ steps.package.outputs.name }}
+          PACKAGE_VERSION: ${{ steps.package.outputs.version }}
+        run: |
+          PUBLISHED_VERSION=$(npm view "$PACKAGE_NAME@$PACKAGE_VERSION" version --registry=https://registry.npmjs.org/ --prefer-online)
+          if [ "$PUBLISHED_VERSION" != "$PACKAGE_VERSION" ]; then
+            echo "::error::Expected $PACKAGE_NAME@$PACKAGE_VERSION to be publicly available, got '$PUBLISHED_VERSION'."
+            exit 1
+          fi
