@@ -8,8 +8,12 @@ declare const useTheme: () => {
         abubutek: string;
         black: string;
         blue: string;
+        charcoal: string;
+        coffebean: string;
         coklat: string;
         darkcyan: string;
+        dustylavender: string;
+        eletricrose: string;
         grey: string;
         greynew: string;
         purple: string;

@@ -1,6 +1,6 @@
 {
   "name": "@rickyarians/ui-react-component-base",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup index.ts --format esm,cjs --dts",
+    "build": "tsup index.ts --format esm,cjs --dts --clean",
     "test": "vitest --coverage"
   },
   "peerDependencies": {
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Rickyarians/React-UI-Component-Base.git"
+    "url": "https://github.com/coolbuilds/React-UI-Component-Base.git"
   },
   
   "devDependencies": {
