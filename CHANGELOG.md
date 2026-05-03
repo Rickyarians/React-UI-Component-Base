@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.8] - 2026-05-04
+
+### Changed
+
+- Renamed the npm package scope from `@rickyarians/ui-react-component-base` to `@coolbuilds/ui-react-component-base`.
+
 ## [1.0.7] - 2026-05-04
 
 ### Fixed
